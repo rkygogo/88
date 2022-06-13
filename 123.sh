@@ -1,32 +1,11 @@
 #!/usr/bin/env bash
 
-# The files installed by the script conform to the Filesystem Hierarchy Standard:
-# https://wiki.linuxfoundation.org/lsb/fhs
 
-# The URL of the script project is:
-# https://github.com/XTLS/Xray-install
-
-# The URL of the script is:
-# https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh
-
-# If the script executes incorrectly, go to:
-# https://github.com/XTLS/Xray-install/issues
-
-# You can set this variable whatever you want in shell session right before running this script by issuing:
-# export DAT_PATH='/usr/local/share/xray'
 DAT_PATH=${DAT_PATH:-/usr/local/share/xray}
 
-# You can set this variable whatever you want in shell session right before running this script by issuing:
-# export JSON_PATH='/usr/local/etc/xray'
+
 JSON_PATH=${JSON_PATH:-/usr/local/etc/xray}
 
-# Set this variable only if you are starting xray with multiple configuration files:
-# export JSONS_PATH='/usr/local/etc/xray'
-
-# Set this variable only if you want this script to check all the systemd unit file:
-# export check_all_service_files='yes'
-
-# Gobal verbals
 
 if [[ -f '/etc/systemd/system/xray.service' ]] && [[ -f '/usr/local/bin/xray' ]]; then
   XRAY_IS_INSTALLED_BEFORE_RUNNING_SCRIPT=1
